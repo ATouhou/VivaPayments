@@ -110,7 +110,7 @@ class VivaPayments {
               "merchantId": "'. $merchantId .'",
               "sourceCode": "'. $sourceCode .'",
               "merchantSourceCode": "'. $sourceCode .'",
-              "terminalmerchantId": "'. $merchantId .'"
+              "terminalMerchantId": "'. $merchantId .'"
             }
           }',
           CURLOPT_HTTPHEADER => array(
