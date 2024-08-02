@@ -84,7 +84,7 @@ class VivaPayments {
         return bin2hex(random_bytes(16));
     }
 
-    public function initiatePayment($authToken, $amount, $terminalId, $merchantId, $sourceCode){
+    public function initiatePayment($authToken, $amount, $terminalId, $merchantId, $sourceCode, $vivaorderreference){
         $curl = curl_init();
         $randomsessionid = $this->randomSessionId();
         curl_setopt_array($curl, array(
@@ -102,14 +102,13 @@ class VivaPayments {
           "cashRegisterId": "cashRegisterId123",
           "amount": '.$amount.',
           "currencyCode": "208",
-          "merchantReference": "merchants-reference freetext",
-          "customerTrns": "Kundens reference fri tekst",
+          "merchantReference": "Mad&Drikke",
+          "customerTrns": "'.$vivaorderreference .'",
           "tipAmount": 0,
           "isvDetails": {
               "amount": 122,
               "merchantId": "'. $merchantId .'",
               "sourceCode": "'. $sourceCode .'",
-              "merchantSourceCode": "'. $sourceCode .'",
               "terminalMerchantId": "'. $merchantId .'"
             }
           }',

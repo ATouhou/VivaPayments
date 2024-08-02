@@ -58,7 +58,7 @@ $isvClientSecret = "...";
 $terminalId = "160....";
 $sourceCode = '6...';
 $amount = 1000;
-
+$orderId = 123; //for reference. Use this as your reference id you want to place your own logic in the webhook callback file
 $authToken = $vivaPayment->getAuthToken($merchantClientId, $merchantClientSecret);
 
 echo "standard Token <pre>";
@@ -78,7 +78,7 @@ echo "</pre>";
 
 
 echo "Initiate Payment <pre>";
-$vivaPayment->initiatePayment($authToken2, $amount, $terminalId, $merchantId, $sourceCode);
+$vivaPayment->initiatePayment($authToken2, $amount, $terminalId, $merchantId, $sourceCode, $orderId);
 echo "</pre>";
 
 
